@@ -11,11 +11,24 @@ namespace binomialTheorem
     {
         // Criar funções para calcular o fatorioal, o somatorio, a unidade do somatorio e o coeficiente
 
+        /// <summary>
+        /// Calculate the binomial coeficient.
+        /// </summary>
+        /// <param name="n">'n' value.</param>
+        /// <param name="p">'p' value.</param>
+        /// <returns>Binomial coeficient.</returns>
         public static double CalcBinomialCoeficient(double n, double p)
         {
             return CalcFat(n) / CalcFat(p) * CalcFat(n - p);
         }
 
+        /// <summary>
+        /// Calculate the binomial theorem.
+        /// </summary>
+        /// <param name="a">'a' value.</param>
+        /// <param name="b">'b' value.</param>
+        /// <param name="n">'n' value.</param>
+        /// <returns>Binomial theorem.</returns>
         public static double CalcBinomialTheorem(double a, double b, int n)
         {
             double sum = 0;
@@ -26,6 +39,11 @@ namespace binomialTheorem
             return sum;
         }
 
+        /// <summary>
+        /// Calculate the fatorial.
+        /// </summary>
+        /// <param name="num">Base number to calculate the fatorial.</param>
+        /// <returns>Fatorial.</returns>
         public static double CalcFat(double num)
         {
             double fat = 1;
@@ -36,6 +54,11 @@ namespace binomialTheorem
             return fat;
         }
         
+        /// <summary>
+        /// Get a valid integer number from the user.
+        /// </summary>
+        /// <param name="errorMessage">Message to be show when the input number is not a integer.</param>
+        /// <returns>The integer number.</returns>
         public static int GetInt(string errorMessage)
         {
             int n;
@@ -51,6 +74,11 @@ namespace binomialTheorem
             return n;
         }
 
+        /// <summary>
+        /// Get a valid double number from the user.
+        /// </summary>
+        /// <param name="errorMessage">Message to be show when the input number is not a double.</param>
+        /// <returns></returns>
         public static double GetDouble(string errorMessage)
         {
             double n;
