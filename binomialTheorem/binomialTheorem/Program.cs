@@ -19,7 +19,7 @@ namespace binomialTheorem
         /// <returns>Binomial coeficient.</returns>
         public static double CalcBinomialCoeficient(double n, double p)
         {
-            return CalcFat(n) / CalcFat(p) * CalcFat(n - p);
+            return CalcFat(n) / (CalcFat(p) * CalcFat(n - p));
         }
 
         /// <summary>
@@ -91,12 +91,17 @@ namespace binomialTheorem
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter 'a' value:");
-            double a = GetDouble("a value is invalid");
-            Console.WriteLine("Enter 'b' value:");
+            Console.WriteLine("Welcome! This project calculates the binomial thorem.");
+            Console.WriteLine("To calculate then you must inster the 'a', 'b' and 'n' value. So lets Begin!");
+            Console.WriteLine("Enter 'a' value (Must be a Real number):");
+            double a = GetDouble("The a value is invalid!");    
+
+            Console.WriteLine("Enter 'b' value (Must be a Real number):");
             double b = GetDouble("'b' value is invalid");
-            Console.WriteLine("Enter 'n' value:");
+
+            Console.WriteLine("Enter 'n' value (Must be a Integer number):");
             int n = GetInt("'n' value is invalid");
+
             double res = CalcBinomialTheorem(a, b, n);
             Console.WriteLine("Resultado: " + res);
             Console.ReadKey();
