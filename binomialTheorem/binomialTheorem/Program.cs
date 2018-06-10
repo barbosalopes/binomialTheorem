@@ -32,7 +32,7 @@ namespace binomialTheorem
         public static double CalcBinomialTheorem(double a, double b, int n)
         {
             double sum = 0;
-            for (int p = 0; p < n; p++)
+            for (int p = 0; p <= n; p++)
             {
                 sum += CalcBinomialCoeficient(n, p) * Math.Pow(a, n-p) * Math.Pow(b, p);
             }
