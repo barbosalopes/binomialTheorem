@@ -66,7 +66,7 @@ namespace binomialTheorem
             Regex rgx = new Regex("^[0-9]+$");
 
             s = Console.ReadLine();
-            while (!int.TryParse(s, out n) && !rgx.IsMatch(s))
+            while ((!int.TryParse(s, out n) && !rgx.IsMatch(s)) || n < 0)
             {
                 Console.WriteLine(errorMessage);
                 s = Console.ReadLine();
@@ -89,22 +89,34 @@ namespace binomialTheorem
             return n;
         }
 
-        static void Main(string[] args)
+        public static void Run()
         {
-            Console.WriteLine("Welcome! This project calculates the binomial thorem.");
-            Console.WriteLine("To calculate then you must inster the 'a', 'b' and 'n' value. So lets Begin!");
             Console.WriteLine("Enter 'a' value (Must be a Real number):");
-            double a = GetDouble("The a value is invalid!");    
-
+            double a = GetDouble("The a value is invalid!");
+            Console.Clear();
             Console.WriteLine("Enter 'b' value (Must be a Real number):");
             double b = GetDouble("'b' value is invalid");
-
+            Console.Clear();
             Console.WriteLine("Enter 'n' value (Must be a Integer number):");
             int n = GetInt("'n' value is invalid");
-
+            Console.Clear();
             double res = CalcBinomialTheorem(a, b, n);
-            Console.WriteLine("Resultado: " + res);
-            Console.ReadKey();
+            Console.WriteLine("Result: " + res);
+        }
+
+
+        static void Main(string[] args)
+        {
+            ConsoleKey op;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("Welcome! This project calculates the binomial thorem.");
+                Console.WriteLine("To calculate then you must insert the 'a', 'b' and 'n' value. So lets Begin!");
+                Run();
+                Console.WriteLine("Press any key to calculate again or ESC to exit.");
+                op = Console.ReadKey().Key;
+            } while (op != ConsoleKey.Escape);
         }
     }
 }
